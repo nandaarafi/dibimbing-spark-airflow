@@ -8,6 +8,8 @@ from kafka import KafkaProducer
 from faker import Faker
 from time import sleep
 from datetime import datetime, timedelta
+import signal
+import sys
 
 dotenv_path = Path("/opt/app/.env")
 load_dotenv(dotenv_path=dotenv_path)
@@ -53,3 +55,4 @@ while True:
     print(response.get())
     print("=-" * 20, flush=True)
     sleep(3)
+

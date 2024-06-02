@@ -16,4 +16,11 @@ RUN pip install \
     python-dotenv==0.20.0 \
     kafka-python==2.0.2 \
     faker==18.9.0
+
+RUN mkdir -p /opt/bitnami/spark/chk_point_dir && \
+    chown -R 1001:1001 /opt/bitnami/spark/chk_point_dir && \
+    chmod -R 775 /opt/bitnami/spark/chk_point_dir
+
 COPY ./.env /opt/app/.env
+
+USER 1001

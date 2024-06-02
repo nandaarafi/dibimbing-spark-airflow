@@ -18,3 +18,34 @@
 ```
 
 ---
+
+## Usecases
+### Airflow Spark Job to Postgres
+To Start run the below command after you run `make docker-build`
+```bash
+make airflow
+make spark
+make postgres
+```
+then go to airflow ui on port http://localhost:8081/ and start the dag
+
+### Kafka Streaming Usecases
+build the docker container with this command
+```bash
+make spark
+make kafka
+```
+then run this command with different window terminal
+for running kafka publisher
+```bash
+make spark-produce 
+```
+
+for running spark streaming to kafka use this
+```bash
+make spark-consume
+```
+
+### Documentation
+
+![Alt text](documentation/kafka.png)

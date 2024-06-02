@@ -79,6 +79,7 @@ airflow:
 	@echo '==========================================================='
 
 postgres: postgres-create postgres-create-warehouse postgres-create-table postgres-ingest-csv
+# postgres: postgres-create postgres-create-warehouse postgres-create-table postgres-ingest-csv
 
 postgres-create:
 	@docker compose -f ./docker/docker-compose-postgres.yml --env-file .env up -d
